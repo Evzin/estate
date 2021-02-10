@@ -1,0 +1,23 @@
+{
+  "name": "testestate",
+  "version": "1.0.0",
+  "description": "TestEstate theme for WP",
+  "main": "index.js",
+  "scripts": {
+    "build": "encore dev",
+    "build-prod": "encore prod",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yevgeniy Zinchenko",
+  "license": "ISC",
+  "devDependencies": {
+    "@popperjs/core": "^2.6.0",
+    "@symfony/webpack-encore": "^0.33.0",
+    "bootstrap": "^5.0.0-beta1",
+    "bootstrap-icons": "^1.3.0",
+    "core-js": "^3.8.3",
+    "jquery": "^3.5.1",
+    "sass": "^1.32.5",
+    "sass-loader": "^10.1.1"
+  }
+}

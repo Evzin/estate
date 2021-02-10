@@ -1,0 +1,40 @@
+# Verison: 1.0.0 - 20.12.20
+version: '3.7'
+services:
+    db:
+        image: sicom/db
+        volumes:
+            - ./data:/var/lib/mysql
+        environment:
+            - MYSQL_ROOT_PASSWORD=1234
+    webserver:
+        image: sicom/nginx
+        ports:
+            - 80:80
+        links:
+            - main
+        volumes:
+            - ./web:/var/www/html
+            # - ./logs/server:/var/log/nginx
+
+    main:
+        depends_on:
+            - db
+        image: sicom/dev:v2.0.1
+        links:
+            - 'db:db'
+        volumes:
+            - './web:/var/www/html'
+            
+    pma:
+        image: phpmyadmin/phpmyadmin
+        depends_on:
+            - db
+        environment:
+            - PMA_ARBITRARY=1
+            - PMA_USER=root
+            - PMA_PASSWORD=1234
+        links:
+            - 'db:db'
+        ports:
+            - 7777:80

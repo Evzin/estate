@@ -1,0 +1,20 @@
+@import "./modules/base.scss";
+@import "./modules/bootstrap-icons.scss";
+
+
+h1 {
+	text-align: center;
+}
+
+.object_list_photo {
+	float: left;
+	margin-bottom: 15px;
+	margin-right: 15px;
+}
+
+.single-estate {
+	img {
+		margin-bottom: 10px;
+	}
+}
+
